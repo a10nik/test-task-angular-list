@@ -1,0 +1,18 @@
+@padding: 1em;
+.header {
+    display: inline-block;
+    padding: @padding;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 2pt solid transparent;
+    &:hover {
+        border-color: #aaa;
+    }
+    &.active {
+        border-color: #555;
+    }
+}
+
+.content {
+    padding: @padding;
+}
