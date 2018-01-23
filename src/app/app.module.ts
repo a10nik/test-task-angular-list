@@ -6,7 +6,17 @@ import { AppComponent } from './app.component';
 import { TabsPageModule } from './tabs-page/tabs-page.module';
 import { CheckboxesPageModule } from './checkboxes-page/checkboxes-page.module';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/list'
+  },
+  {
+    path: '**',
+    redirectTo: '/list'
+  }
+];
 
 @NgModule({
   declarations: [

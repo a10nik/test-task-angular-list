@@ -6,7 +6,7 @@ import { TabComponent, TabsComponent } from '../components/tabs/tabs.component';
 import { ComponentsModule } from '../components/components.module';
 import { TopicsService } from '../services/topics/topics.service';
 
-const appRoutes: Routes = [
+const routes: Routes = [
   { path: 'tabs/:tabNumber', component: TabsPageComponent },
 ];
 
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     ComponentsModule,
-    RouterModule.forChild(appRoutes),
+    RouterModule.forChild(routes),
   ],
   exports: [
   ],

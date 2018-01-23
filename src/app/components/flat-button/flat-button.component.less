@@ -1,4 +1,4 @@
-.button {
+button {
     background-color: #555; /* Green */
     border: none;
     color: white;
@@ -8,4 +8,7 @@
     display: inline-block;
     cursor: pointer;
     font-size: 1em;
+    &:disabled {
+        background-color: #aaa;
+    }
 }

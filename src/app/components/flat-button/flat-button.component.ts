@@ -4,7 +4,7 @@ import { Component, OnChanges, ContentChildren, ContentChild, QueryList, AfterCo
   selector: 'flat-button',
   styleUrls: [`./flat-button.component.less`],
   template: `
-    <button class="button" (click)="click.emit($event)" [disabled]="disabled" [routerLink]="routerLink">
+    <button class="button" type="button" (click)="click.emit($event)" [disabled]="disabled" [routerLink]="routerLink">
       <ng-content></ng-content>
     </button>
   `

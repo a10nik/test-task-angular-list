@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TopicsService, TopicModel } from '../services/topics/topics.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tabs-page',
@@ -21,6 +22,7 @@ export class TabsPageComponent implements OnInit {
   constructor(
     private topicService: TopicsService,
     private route: ActivatedRoute,
+    private router: Router
   ) {
   }
   
@@ -31,6 +33,9 @@ export class TabsPageComponent implements OnInit {
       .getSelection()
       .filter(t => t.selected)
       .map(t => t.topic);
+    if (this.topics.length === 0) {
+      this.router.navigate(['']);
+    }
     this.route.paramMap.subscribe(p => {
       this.activeTabNumber = +p.get('tabNumber');
     });

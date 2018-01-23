@@ -6,7 +6,7 @@ import { ComponentsModule } from '../components/components.module';
 import { CheckboxesPageComponent } from './checkboxes-page.component';
 import { TopicsService } from '../services/topics/topics.service';
 
-const appRoutes: Routes = [
+const routes: Routes = [
   { path: 'list', component: CheckboxesPageComponent },
 ];
 
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     ComponentsModule,
-    RouterModule.forChild(appRoutes),
+    RouterModule.forChild(routes),
   ],
   exports: [
   ],

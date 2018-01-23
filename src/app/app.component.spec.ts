@@ -5,6 +5,9 @@ import { AppModule } from './app.module';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
+  let app;
+  let fixture;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -14,10 +17,10 @@ describe('AppComponent', () => {
         RouterTestingModule
       ]
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
   }));
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 });
