@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TopicsService, TopicModel, TopicSelection } from '../services/topics.service';
+import { TopicsService, TopicSelection } from '../services/topics/topics.service';
 
 @Component({
   selector: 'app-checkboxes-page',
@@ -30,7 +30,7 @@ export class CheckboxesPageComponent implements OnInit {
 
   toggle(topicSelection: TopicSelection) {
     topicSelection.selected = !topicSelection.selected;
-    this.topicsService.setSelected(topicSelection);
+    this.topicsService.setSelected(topicSelection.topic.id, topicSelection.selected);
   }
 
   get isAnythingSelected() {

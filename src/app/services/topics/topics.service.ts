@@ -11,8 +11,13 @@ export interface TopicSelection {
   selected: boolean;
 }
 
+export interface ITopicsService {
+  setSelected(topicId: string, selected: boolean): void;
+  getSelection(): TopicSelection[];
+}
+
 @Injectable()
-export class TopicsService {
+export class TopicsService implements ITopicsService {
   private localStorageKey: string = "activeTopicIds";
   constructor() {}
 
@@ -34,12 +39,12 @@ export class TopicsService {
       .map(topic => ({topic, selected: activeIds.has(topic.id)}));
   }
 
-  public setSelected({topic, selected}: TopicSelection) {
+  public setSelected(topicId: string, selected: boolean) {
     const activeIds = this.getActiveIds();
     if (selected) {
-      activeIds.add(topic.id);
+      activeIds.add(topicId);
     } else {
-      activeIds.delete(topic.id);
+      activeIds.delete(topicId);
     }
     this.setActiveIds(activeIds);
   }

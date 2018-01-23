@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { TabsPageComponent } from './tabs-page.component';
 import { RouterModule, Routes }  from '@angular/router';
 import { TabComponent, TabsComponent } from '../components/tabs/tabs.component';
-import { TopicsService } from '../services/topics.service';
 import { ComponentsModule } from '../components/components.module';
+import { TopicsService } from '../services/topics/topics.service';
 
 const appRoutes: Routes = [
   { path: 'tabs/:tabNumber', component: TabsPageComponent },

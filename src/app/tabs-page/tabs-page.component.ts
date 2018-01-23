@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TopicModel, TopicsService } from '../services/topics.service';
+import { TopicsService, TopicModel } from '../services/topics/topics.service';
 
 @Component({
   selector: 'tabs-page',
